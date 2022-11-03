@@ -1,7 +1,9 @@
 # 📱 App Movil
 
+
 ## Tecnologias
 ````
 - Java
-- SqLite
+- Kotlin
+- Firebase
 ````
