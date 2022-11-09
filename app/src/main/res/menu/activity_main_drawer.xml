@@ -24,7 +24,16 @@
             android:icon="@drawable/ic_baseline_add_box_24"
             android:title="@string/menu_registrar" />
 
+    <item android:id="@+id/subMenu1"
 
+        android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_catalogo"
+                android:icon="@drawable/ic_baseline_food_bank_24"
+                android:title="@string/menu_catalogo" />
+        </menu>
+    </item>
 
 
        <item android:id="@+id/subMenu"

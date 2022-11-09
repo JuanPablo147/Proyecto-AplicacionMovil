@@ -27,7 +27,7 @@
 
     <string name="tv1">PrimerActivity</string>
     <string name="tv2">SegundoActivity</string>
-    <string name="menu_catalogo">Platillos</string>
+    <string name="menu_catalogo">Productos</string>
     <string name="title_activity_bottom">BottomActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
