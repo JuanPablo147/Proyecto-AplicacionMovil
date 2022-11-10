@@ -41,6 +41,7 @@ class CatalogoFragment : Fragment() {
         return root
     }
 
+
     private fun EventChangeListener(){
         db = FirebaseFirestore.getInstance()
         db.collection("Producto").addSnapshotListener(object : EventListener<QuerySnapshot>
