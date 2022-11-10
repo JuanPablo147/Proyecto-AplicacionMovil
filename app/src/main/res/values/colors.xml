@@ -22,4 +22,6 @@
     <color name="color3">#FF9800</color>
     <color name="blue">#3F51B5</color>
     <color name="green">#1D9922</color>
+    <color name="red">#FF1100</color>
+    <color name="orange">#FF4A3D</color>
 </resources>
