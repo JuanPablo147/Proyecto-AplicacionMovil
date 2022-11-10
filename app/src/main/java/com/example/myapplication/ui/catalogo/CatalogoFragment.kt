@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.example.myapplication.CustomAdapter
 import com.example.myapplication.Producto
 import com.example.myapplication.R
+import com.example.myapplication.SimpleDialog
 import com.google.firebase.firestore.*
 
 
@@ -35,12 +36,41 @@ class CatalogoFragment : Fragment() {
         arrayListProducto= arrayListOf()
 
 
-        adapter = CustomAdapter(activity!!, arrayListProducto)
+        adapter = CustomAdapter(requireActivity(), arrayListProducto)
         itemsListView.adapter = adapter
         EventChangeListener()
         return root
     }
+    override fun onResume() {
+        super.onResume()
 
+        if(itemsListView!=null){
+            try {
+
+                itemsListView.setOnItemClickListener { _, _, position, _ ->
+                    if(arrayListProducto[position].estado == "No disponible"){
+                        Toast.makeText(context, "El producto seleccionado se encuentra agotado", Toast.LENGTH_SHORT).show()
+                    }else{
+
+                        val dialog= SimpleDialog.newInstance(
+                            arrayListProducto[position].nombre_Producto.toString(),
+                            arrayListProducto[position].negocio.toString(),
+                            arrayListProducto[position].costo.toString(),
+                            arrayListProducto[position].tipo_comida.toString(),
+                            arrayListProducto[position].descripcion.toString(),
+                            arrayListProducto[position].estado.toString()
+                        )
+                        dialog.show(this.childFragmentManager, SimpleDialog.TAG)
+                        
+
+                    }
+                }
+            } catch(_: Exception) {
+
+            }
+
+
+        }}
 
     private fun EventChangeListener(){
         db = FirebaseFirestore.getInstance()
