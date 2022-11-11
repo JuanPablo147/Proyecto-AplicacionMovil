@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Fast Food</string>
+    <string name="title_activity_menu_princial">MenuPrincialActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_new_header_title">Fast Food</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_new_subtitle">Necesita iniciar sesion</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="iniciar">Iniciar</string>
+    <string name="menu_home">Inicio</string>
+    <string name="mis_favoritos">Mis Favoritos</string>
+    <string name="menu_registrar">Registrar Productos</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_custom">Custom</string>
+    <string name="iniciar_Sesion">Registrarse</string>
+    <string name="menu_logout">Logout</string>
+    <string name="title_activity_inicio">InicioActivity</string>
+    <!--registrar producto-->
+
+    <string name="btn_Registrar_Producto">Registrar Producto</string>
+    <string name="btn_Registrar_Producto_Activity">Registrar</string>
+    <!--visualizar producto-->
+
+    <string name="tv1">PrimerActivity</string>
+    <string name="tv2">SegundoActivity</string>
+    <string name="menu_catalogo">Productos</string>
+    <string name="title_activity_bottom">BottomActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="account">Account</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="settings">Settings</string>
+    <string name="atr07">Atr07</string>
+    <string name="next_fragment">Next Fragment</string>
+    <string name="close_app">Close App</string>
+    <string name="accounts_fragment">Accounts Fragment</string>
+    <string name="dashboard_fragment">Dashboard Fragment</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="settings_fragment">Settings Fragment</string>
+    <string name="order_confirmation">Texto del Dialog</string>
+    <string name="ok">OK</string>
+
+    <string name="ingresarEmailInicio">Email</string>
+    <string name="ingresarContrasenaInicio">Contraseña</string>
+    <string name="iniciarSesion">Iniciar Sesion</string>
+
+    <string name="label_logout">Log Out</string>
+    <string name="msg_logout">Descripcion</string>
+    <string name="label_cancel">Regresar</string>
+    <string name="label_ok">Añadir al carrito</string>
+    <string name="msg_enter_details">Please Enter your Details</string>
+    <string name="msg_hint_name">Enter Name</string>
+    <string name="label_submit">Submit</string>
+    <string name="label_simple_dialog">Simple Dialog</string>
+    <string name="label_dialog_with_data">Dialog With Data</string>
+    <string name="menu_negocio">Negocios</string>
+    <string name="menu_registrar_negocio">Crear Negocio</string>
+    <string name="titulo_comida">Titulo Comida</string>
+</resources>

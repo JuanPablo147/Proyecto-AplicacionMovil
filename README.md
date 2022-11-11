@@ -1,5 +1,4 @@
-# 📱 App Movil
-
+# Proyecto-AplicacionMovil
 
 ## Tecnologias
 ````
