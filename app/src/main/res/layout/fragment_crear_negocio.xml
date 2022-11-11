@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dimen_12"
+    tools:context=".CrearNegocioFragment"
+    android:background="@drawable/listgrad"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="vertical"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EntradaNombreNegocio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/rounded_edittext_states"
+
+                android:hint="Nombre del negocio"
+                app:counterMaxLength="30"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:counterMaxLength="8"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/EntradaUbicacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_edittext_states"
+
+
+                    android:ems="10"
+                    android:inputType="text"
+                    android:hint="Ubicacion"
+                    android:layout_marginTop="8dp"
+
+
+                    />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/EntradaEmailNegocio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext_states"
+
+                        android:ems="10"
+                        android:inputType="textEmailAddress"
+                        android:hint="Email"
+                        android:layout_marginTop="8dp"
+
+
+                        />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/EntradaDescripcionNegocio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/rounded_edittext_states"
+                            android:inputType="text"
+
+                            android:hint="Descripcion del Negocio"
+                            />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            >
+
+
+                            <ImageView
+                                android:id="@+id/imageView1"
+                                android:layout_width="match_parent"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_dashboard_black_24dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+
+                            <Button
+                                android:id="@+id/buttonCargarImagen"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginTop="8dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_weight="0"
+                                android:text="Cargar Imagen" />
+                            <Button
+
+                                android:id="@+id/buttonRegistrarseN"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+
+                                android:background="@drawable/rounded_botones"
+                                android:fontFamily="@font/roboto_fonts_family"
+                                android:hint="REGISTRARSE"
+                                android:onClick="registrarUsuario"
+
+                                android:textColorHint="@color/boton"
+
+                                />
+
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
