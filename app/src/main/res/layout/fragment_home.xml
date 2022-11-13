@@ -36,6 +36,16 @@
             android:orientation="vertical">
 
 
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+
+                android:backgroundTint="#600D29"
+
+                android:text="Ver Comida" />
+
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="match_parent"
@@ -72,7 +82,12 @@
             android:orientation="vertical">
 
 
-
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#600D29"
+                android:text="Ver Bebida" />
         </LinearLayout>
 
         <TextView
