@@ -1,0 +1,30 @@
+Corrigiendo algunos errores de personalizacion y creando nuevas ventanas
+
+
+Creando nuevos fragmentos para añadir negocios, realizando ajustes a los
+componentes de la personalizacion del layout para una mejor
+compatibilidad con dispostivos de gama baja
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch dev/visualizar_producto
+# Changes to be committed:
+#	new file:   .idea/vcs.xml
+#	new file:   app/src/main/java/com/example/myapplication/CrearNegocioFragment.kt
+#	modified:   app/src/main/java/com/example/myapplication/MainActivity.kt
+#	new file:   app/src/main/java/com/example/myapplication/NegocioFragment.kt
+#	modified:   app/src/main/java/com/example/myapplication/ViewActivity.kt
+#	new file:   app/src/main/res/drawable/ic_baseline_add_business_24.xml
+#	new file:   app/src/main/res/drawable/ic_baseline_business_center_24.xml
+#	new file:   app/src/main/res/drawable/rounded_botones.xml
+#	new file:   app/src/main/res/drawable/rounded_edittext_states.xml
+#	modified:   app/src/main/res/layout/activity_iniciar2.xml
+#	modified:   app/src/main/res/layout/activity_iniciarsesion.xml
+#	modified:   app/src/main/res/layout/activity_registrarse.xml
+#	new file:   app/src/main/res/layout/fragment_crear_negocio.xml
+#	new file:   app/src/main/res/layout/fragment_negocio.xml
+#	modified:   app/src/main/res/layout/fragment_slideshow.xml
+#	modified:   app/src/main/res/menu/activity_main_drawer.xml
+#	modified:   app/src/main/res/navigation/mobile_navigation.xml
+#	modified:   app/src/main/res/values/strings.xml
+#
