@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "146309108286",
+    "project_id": "fastfood-a4739",
+    "storage_bucket": "fastfood-a4739.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146309108286:android:0d2b882fe2aa366a88f76f",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146309108286-agpj7a69heuihe52s5g8hoivs13hrl65.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9eaGp25Ea9m4TOwE24G-uxSe2bQA4lRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146309108286-agpj7a69heuihe52s5g8hoivs13hrl65.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146309108286:android:f36b25cf165c119788f76f",
+        "android_client_info": {
+          "package_name": "com.example.registrousuario"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146309108286-agpj7a69heuihe52s5g8hoivs13hrl65.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9eaGp25Ea9m4TOwE24G-uxSe2bQA4lRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146309108286-agpj7a69heuihe52s5g8hoivs13hrl65.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
