@@ -1,0 +1,8 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://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@github.com/JuanPablo147/Proyecto-AplicacionMovil.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
