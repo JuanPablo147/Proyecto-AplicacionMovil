@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/listgrad"
+    tools:context=".MainActivity">
+
+
+    <!-- app:backgroundTint="@null"
+        android:background="@drawable/listgrad"
+        android:background="@color/background"
+    -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="BIENVENIDO"
+        android:fontFamily="@font/arial_fonts_family"
+        android:textStyle="bold|italic"
+        android:textColor="@color/textColor"
+        android:textSize="30dp"
+
+        />
+
+    <Button
+        app:backgroundTint="@null"
+        android:id="@+id/button2"
+        android:layout_width="235dp"
+        android:layout_height="237dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/round_button"
+        android:text="INICIAR"
+        android:fontFamily="@font/arial_fonts_family"
+        android:textStyle="bold|italic"
+        android:textColor="@color/textColor"
+
+
+        android:textSize="25dp" />
+
+
+</LinearLayout>

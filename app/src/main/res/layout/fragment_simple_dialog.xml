@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimen_12">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_height="@dimen/dimen_48"
+            android:text="@string/titulo_comida"
+            android:textSize="@dimen/font_size_24"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle11"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_48"
+                android:textColor="@color/black"
+
+                android:textStyle="bold"
+                android:text="Nombre del Negocio: "
+                android:textSize="@dimen/font_size_16"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_48"
+                android:textColor="@color/black"
+                android:text="@string/msg_logout"
+                android:textSize="@dimen/font_size_16"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle1312"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_48"
+                android:textColor="@color/black"
+
+                android:textStyle="bold"
+                android:text="Precio: "
+                android:textSize="@dimen/font_size_16"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_48"
+                android:textColor="@color/black"
+                android:text="@string/msg_logout"
+                android:textSize="@dimen/font_size_16"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle112"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_48"
+                android:textColor="@color/black"
+
+                android:textStyle="bold"
+                android:text="Tipo: "
+                android:textSize="@dimen/font_size_16"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_48"
+                android:textColor="@color/black"
+                android:text="@string/msg_logout"
+                android:textSize="@dimen/font_size_16"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle1112"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_48"
+                android:textColor="@color/black"
+
+                android:textStyle="bold"
+                android:text="Descripcion: "
+                android:textSize="@dimen/font_size_16"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_48"
+                android:textColor="@color/black"
+                android:text="@string/msg_logout"
+                android:textSize="@dimen/font_size_16"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle222"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_48"
+                android:textColor="@color/black"
+
+                android:textStyle="bold"
+                android:text="Estado: "
+                android:textSize="@dimen/font_size_16"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_48"
+                android:textColor="@color/black"
+                android:text="@string/msg_logout"
+                android:textSize="@dimen/font_size_16"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:showDividers="middle"
+            >
+
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnNegative"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_weight="0.5"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:text="@string/label_cancel"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnPositive"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_weight="0.5"
+
+                android:layout_marginTop="@dimen/dimen_16"
+                android:text="@string/label_ok"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
