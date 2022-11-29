@@ -32,6 +32,10 @@
                 android:id="@+id/nav_catalogo"
                 android:icon="@drawable/ic_baseline_food_bank_24"
                 android:title="@string/menu_catalogo" />
+                android:id="@+id/nav_negocio"
+                android:icon="@drawable/ic_baseline_business_center_24"
+                android:title="@string/menu_negocio" />
+
         </menu>
     </item>
 
