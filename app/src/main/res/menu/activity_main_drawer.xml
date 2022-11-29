@@ -36,6 +36,7 @@
                 android:id="@+id/nav_negocio"
                 android:icon="@drawable/ic_baseline_business_center_24"
                 android:title="@string/menu_negocio" />
+
         </menu>
     </item>
 
@@ -48,7 +49,6 @@
                    android:id="@+id/nav_logout"
                    android:icon="@drawable/ic_baseline_logout_24"
                    android:title="@string/menu_logout" />
-
            </menu>
        </item>
 
