@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".INICIARSESION"
+    android:background="@drawable/listgrad"
+
+    >
+
+    <LinearLayout
+        android:layout_width="340dp"
+        android:layout_height="604dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="vertical"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="67dp">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EntradaEmailInicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_edittext_states"
+
+                android:ems="10"
+                android:hint="@string/ingresarEmailInicio"
+                android:inputType="textEmailAddress"
+
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="356dp"
+                android:gravity="center"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/EntradaContraseñaInicio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/rounded_edittext_states"
+                    android:hint="@string/ingresarContrasenaInicio"
+
+                    android:inputType="textPassword" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="340dp"
+                    android:layout_height="287dp"
+                    android:gravity="center">
+
+                    <Button
+
+                        android:id="@+id/button6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/rounded_botones"
+                        android:fontFamily="@font/roboto_fonts_family"
+                        android:hint="@string/btnInicioSesion"
+                        android:textColorHint="@color/boton"
+                         />
+
+                    <Button
+
+                        android:id="@+id/button7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/roboto_fonts_family"
+
+                        android:hint="@string/btn_aun_no_registrado"
+                        android:textColorHint="@color/boton"
+                        app:backgroundTint="@null"
+
+
+
+                        />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

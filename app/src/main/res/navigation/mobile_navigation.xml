@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.myapplication.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.myapplication.ui.gallery.GalleryFragment"
+        android:label="@string/mis_favoritos"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.myapplication.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_registrar"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_crear_negocio"
+        android:name="com.example.myapplication.CrearNegocioFragment"
+        android:label="@string/menu_registrar_negocio"
+        tools:layout="@layout/fragment_crear_negocio" />
+    <fragment
+        android:id="@+id/nav_editar_negocio"
+        android:name="com.example.myapplication.EditarNegocioFragment"
+        android:label="@string/menu_editar_negocio"
+        tools:layout="@layout/fragment_editar_negocio" />
+    <fragment
+        android:id="@+id/nav_negocio"
+        android:name="com.example.myapplication.NegocioFragment"
+        android:label="@string/menu_negocio"
+        tools:layout="@layout/fragment_negocio" />
+    <activity
+        android:id="@+id/nav_logout"
+        android:name="com.example.myapplication.MainActivity"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/nav_catalog"
+        android:name="com.example.myapplication.ui.inicio.InicioFragment"
+        android:label="Productos"
+        tools:layout="@layout/fragment_iniciar" />
+    <activity
+        android:id="@+id/nav_carrito"
+        android:name="com.example.myapplication.Carrito"
+        android:label="Carrito"
+        tools:layout="@layout/activity_carrito" />
+    <activity
+        android:id="@+id/nav_iniciosesion"
+        android:name="com.example.myapplication.INICIARSESION"
+        android:label="@string/iniciarSesion"
+        tools:layout="@layout/activity_iniciarsesion" />
+</navigation>
