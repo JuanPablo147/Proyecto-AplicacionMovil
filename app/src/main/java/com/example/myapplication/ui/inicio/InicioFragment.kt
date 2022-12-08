@@ -165,7 +165,9 @@ class InicioFragment : Fragment() {
 
  fun searchProduct(){
      searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-
+         override fun onQueryTextSubmit(query: String?): Boolean {
+             return true
+         }
      })
      }
  }

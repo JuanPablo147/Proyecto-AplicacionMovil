@@ -10,7 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3baec4ac-e8d3-465b-a052-1f65d0cf21ee" name="Changes" comment="Vinculando el fragmento &quot;catalogo&quot; con el menu principal">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/inicio/InicioFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui/inicio/InicioFragment.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
