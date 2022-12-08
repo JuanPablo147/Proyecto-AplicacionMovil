@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ListView
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.core.view.isNotEmpty
 import androidx.fragment.app.Fragment
 import com.example.myapplication.*
@@ -27,8 +28,10 @@ class InicioFragment : Fragment() {
 
     private var adapter: CustomAdapter? = null
     private lateinit var arrayListProducto: ArrayList<Producto>
+    private var arrayListComplete : ArrayList<Producto> = arrayListOf() // lista original de productos
     private lateinit var db: FirebaseFirestore
     private lateinit var itemsListView: ListView
+    private lateinit var searchView : SearchView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,6 +41,7 @@ class InicioFragment : Fragment() {
 
         val root: View = inflater.inflate(R.layout.fragment_iniciar , container ,false)
         itemsListView = root.findViewById(R.id.list_view_items)
+        searchView = root.findViewById(R.id.search_products)
         arrayListProducto= arrayListOf()
 
 
