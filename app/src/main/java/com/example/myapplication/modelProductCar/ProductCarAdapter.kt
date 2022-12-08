@@ -4,10 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.bumptech.glide.Glide
 import com.example.myapplication.R
 
@@ -17,6 +14,7 @@ class ProductCarAdapter (context: Context, items: ArrayList<ProductCar>) : BaseA
 
     lateinit var actionAdd : (position : Int) -> Unit
     lateinit var actionRemove : (position : Int) -> Unit
+    lateinit var actionComprar : (position : Int) -> Unit
     var context = context
 
     var name = items
@@ -40,6 +38,8 @@ class ProductCarAdapter (context: Context, items: ArrayList<ProductCar>) : BaseA
             holder.btnAdd = myView!!.findViewById(R.id.btn_add)
             holder.btnRemove = myView!!.findViewById(R.id.btn_remove)
             holder.textCant= myView!!.findViewById(R.id.text_product_car_cant)
+                    holder.enviar= myView.findViewById(R.id.btnW)
+
             myView.setTag(holder)
         } else {
             holder = myView.getTag() as ViewHolder
@@ -63,6 +63,9 @@ class ProductCarAdapter (context: Context, items: ArrayList<ProductCar>) : BaseA
 
         holder.btnRemove!!.setOnClickListener {
             actionRemove.invoke(position)
+        }
+        holder.enviar!!.setOnClickListener {
+            actionComprar.invoke(position)
         }
 
 
@@ -88,6 +91,7 @@ class ProductCarAdapter (context: Context, items: ArrayList<ProductCar>) : BaseA
         var btnAdd : ImageView ?= null
         var btnRemove : ImageView ?= null
         var textCant : TextView ?= null
+        var enviar : Button?= null
 /*
         var mImageView: ImageView? = view.findViewById<View>(R.id.imageView) as ImageView
         var mTextView: TextView? = view.findViewById<View>(R.id.text_view_item_name) as TextView
