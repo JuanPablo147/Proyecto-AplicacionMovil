@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/grid_color_selector"
+
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:cardBackgroundColor="@color/color1"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView123"
+        app:layout_constraintEnd_toEndOf="@+id/imageView123"
+        app:layout_constraintStart_toEndOf="@+id/imageView123"
+        app:layout_constraintTop_toBottomOf="@+id/imageView123">
+
+        <TextView
+            android:id="@+id/text_product_car_cant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="1000"
+            android:textColor="@color/white"
+            android:textSize="9sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView123"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_baseline_fastfood_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pedido"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/text_product_car_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_toRightOf="@+id/imageView"
+            android:fontFamily="@font/arial_fonts_family"
+            android:gravity="start"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/text_product_car_cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_view_item_name"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/imageView"
+            android:fontFamily="@font/roboto_fonts_family"
+            android:padding="8dp"
+            android:textSize="9sp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/btnW"
+
+            android:layout_width="113dp"
+            android:layout_height="wrap_content"
+
+
+            android:backgroundTint="#600D29"
+            android:text="pedido" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_add"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            app:tint="@color/green"
+            app:srcCompat="@drawable/ic_baseline_add_box_24" />
+
+        <ImageView
+            android:id="@+id/btn_remove"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            app:tint="@color/color1"
+            app:srcCompat="@drawable/ic_baseline_indeterminate_check_box_24" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
