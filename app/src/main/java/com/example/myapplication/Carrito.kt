@@ -71,22 +71,7 @@ class Carrito : AppCompatActivity() {
         getProducCarList()
     }
 
-    private fun navigateToWhatsApp(position: Int) {
-        var p: ProductCar =listProductCar[position]
-        var c: ProductCar =listProductCar[position]
-        try {
-            val etCod = 591
-            val cel = 76986478
-            val etMsj = "Hola, quisiera realizar un pedido de ${p.nombre_producto} con una cantidad de platillos de ${p.cant} ," +
-                    " con precio total de ${p.costo*p.cant} Bs "
-            val url = "https://api.whatsapp.com/send?phone=$etCod${p.telefono.toString()}&text=$etMsj"
-            startActivity(Intent.createChooser(Intent(Intent.ACTION_VIEW, Uri.parse(url)).setPackage("com.whatsapp"), "Share with"))
-        }catch (e :Exception){
-            val text ="Whatsapp app not installed in your device"
-
-            Toast.makeText(this@Carrito, text, Toast.LENGTH_SHORT).show()
-        }
-    }
+    
     private fun getProductCar(): ArrayList<ProductCar> {
         val email = getEmailCurrentUser()
 
