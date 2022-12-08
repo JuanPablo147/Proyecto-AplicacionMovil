@@ -77,6 +77,16 @@
             android:textSize="9sp"
             android:textStyle="italic" />
 
+        <Button
+            android:id="@+id/btnW"
+
+            android:layout_width="113dp"
+            android:layout_height="wrap_content"
+
+
+            android:backgroundTint="#600D29"
+            android:text="pedido" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -101,6 +111,7 @@
             android:layout_height="@dimen/dimen_48"
             app:tint="@color/color1"
             app:srcCompat="@drawable/ic_baseline_indeterminate_check_box_24" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
