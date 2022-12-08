@@ -163,6 +163,11 @@ class InicioFragment : Fragment() {
         return email ?: ""
     }
 
+ fun searchProduct(){
+     searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
+     })
+     }
+ }
 
 }
