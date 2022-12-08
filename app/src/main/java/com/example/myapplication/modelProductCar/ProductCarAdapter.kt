@@ -60,10 +60,11 @@ class ProductCarAdapter (context: Context, items: ArrayList<ProductCar>) : BaseA
         holder.btnAdd!!.setOnClickListener {
             actionAdd.invoke(position)
         }
-
+        //Agregamos funcionalidades al boton para eliminar
         holder.btnRemove!!.setOnClickListener {
             actionRemove.invoke(position)
         }
+        //Agregamos funcionalidades al boton para enviar
         holder.enviar!!.setOnClickListener {
             actionComprar.invoke(position)
         }

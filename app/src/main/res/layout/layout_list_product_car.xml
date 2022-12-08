@@ -87,6 +87,13 @@
             android:backgroundTint="#600D29"
             android:text="pedido" />
 
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:text="Pedido"
+            tools:visibility="invisible" />
+
     </LinearLayout>
 
     <LinearLayout
