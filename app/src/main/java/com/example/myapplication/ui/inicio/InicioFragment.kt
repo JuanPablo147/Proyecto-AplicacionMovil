@@ -168,6 +168,14 @@ class InicioFragment : Fragment() {
          override fun onQueryTextSubmit(query: String?): Boolean {
              return true
          }
+         override fun onQueryTextChange(newText: String?): Boolean {
+              if(newText==null){
+
+
+              }
+          return true
+
+         }
      })
      }
  }
