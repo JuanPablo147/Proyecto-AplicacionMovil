@@ -91,8 +91,60 @@ class EditarNegocioFragment : Fragment() {
                 }
             }
         }
+        entradaEmailNegocio.setOnClickListener {
+            alPresionar("No puede cambiar de e-mail")
+        }
+        val button : Button = root.findViewById(R.id.buttonModificarImagen)
+        buttonRegistrarseN  = root.findViewById(R.id.buttonModificarNegocio)
+        button.setOnClickListener {
 
+            cropImage.launch(
+                options(uri = imageUri) {
+                    setGuidelines(CropImageView.Guidelines.ON)
+                    setActivityTitle("Cargar Imagen")
+                    setAspectRatio(1, 1)
+                    setOutputCompressFormat(Bitmap.CompressFormat.PNG)
+
+
+                }
+
+            )
+
+            image.setImageURI(imageUri)
+
+
+        }
+        buttonRegistrarseN.setOnClickListener {
+            if (validarCampos(entradaNombreNegocio, entradaUbicacion, entradaEmailNegocio, entradaDescripcionNegocio,entradatelefono)){
+                val business = Negocios(
+                    Nombre_Negocio= entradaNombreNegocio.editableText.toString(),
+                    Descripcion_Negocio= entradaDescripcionNegocio.editableText.toString(),
+                    id_negocio= id_negocios,
+                    suma_Promedio=suma_Promedio,
+                    numero_N =numero_N,
+                    Ubicacion=entradaUbicacion.editableText.toString(),
+                    Email_Negocio=entradaEmailNegocio.editableText.toString(),
+                    Ruta_imagen=rutaImagen,
+                    telefono = entradatelefono.editableText.toString().toInt()
+                )
+                //Toast.makeText(context, "Es ${business.nombre_Negocio},${business.id_negocio},${business.descripcion_Negocio},${business.ubicacion}" + ",${business.email_Negocio},${business.ruta_imagen},${business.numero_N}\",${business.suma_Promedio}\"", Toast.LENGTH_LONG).show()
+                db.collection("Business").document(business.id_negocio).set(business, SetOptions.merge())
+
+
+                val intent = Intent(activity, InicioActivity::class.java)
+                intent.putExtra("negocio", entradaNombreNegocio.text.toString())
+                intent.putExtra("email", entradaEmailNegocio.text.toString())
+                startActivity(intent)
+                lifecycleScope.launch(Dispatchers.IO){
+                    saveValues(entradaEmailNegocio.text.toString(),entradaNombreNegocio.text.toString(), checked = true, checked2 = false)
+                }
+
+            }
+        }
         return root
+    }
+    private fun alPresionar(texto :String) {
+        Toast.makeText(activity, texto, Toast.LENGTH_SHORT).show()
     }
     private fun getFileName(context: Context, uri: Uri): String? {
         if (uri.scheme == "content") {
