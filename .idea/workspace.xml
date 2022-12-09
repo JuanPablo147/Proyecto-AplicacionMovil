@@ -10,7 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3baec4ac-e8d3-465b-a052-1f65d0cf21ee" name="Changes" comment="Vinculando el fragmento &quot;catalogo&quot; con el menu principal">
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_historial.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_historial.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/HistorialFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/HistorialFragment.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,12 +67,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aadz/Proyecto-AplicacionMovil" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/ui" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
     </key>
     <key name="android.template.-785943517">
       <recent name="com.example.myapplication" />
