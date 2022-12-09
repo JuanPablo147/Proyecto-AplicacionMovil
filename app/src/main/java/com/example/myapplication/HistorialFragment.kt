@@ -80,7 +80,32 @@ class HistorialFragment : Fragment() {
         )
 
     }
+    override fun onResume() {
+        super.onResume()
+        myadapter.onItemClick = { contact ->
 
+            val promedio: Float = if(contact.numero_N !=0){
+                (contact.suma_Promedio/contact.numero_N).toFloat()
+            }else{
+                (0).toFloat()
+            }
+            // do something with your item
+            //Toast.makeText(activity, contact.nombre_Negocio, Toast.LENGTH_LONG).show()
+            //db.collection("BusinessV2").document(contact.id).set(contact, SetOptions.merge())
+            HistorialDialog.newInstance(
+                contact.nombre_Negocio,
+                contact.email_Negocio,
+                contact.descripcion_Negocio,
+                contact.ubicacion,
+                contact.id_negocio,
+                promedio
+
+            ).show(this.childFragmentManager, HistorialDialog.TAG)
+
+
+
+        }
+    }
 
 
     private fun obtenerNegocios(correo_cliente: String){
