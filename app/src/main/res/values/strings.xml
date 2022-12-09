@@ -75,6 +75,7 @@
     <string name="salir">Salir</string>
     <string name="menu_editar_negocio">Editar Negocio</string>
     <string name="titulo_comida">Título Comida</string>
+    <string name="historial">Historial</string>
 
     <string-array name="tipo_productos">
         <item>Comida</item>
