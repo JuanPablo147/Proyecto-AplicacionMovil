@@ -1,9 +1,12 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.provider.OpenableColumns
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +14,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
@@ -23,10 +28,13 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.io.ByteArrayOutputStream
+import java.io.File
 
 
 class EditarNegocioFragment : Fragment() {
@@ -44,7 +52,18 @@ class EditarNegocioFragment : Fragment() {
     private var numero_N : Int=0
     private var telefono : Int=0
     private lateinit var negocioArrayList1: ArrayList<String>
+    private val cropImage = this.registerForActivityResult(CropImageContract()) { result ->
+        if (result.isSuccessful) {
 
+            uriContent = result.uriContent
+            result.getUriFilePath(context!!)
+            image.setImageURI(uriContent)
+            ubicacionImagen= subirAFireBase()
+        } else {
+
+            result.error
+        }
+    }
 
 
     override fun onCreateView(
@@ -74,6 +93,70 @@ class EditarNegocioFragment : Fragment() {
         }
 
         return root
+    }
+    private fun getFileName(context: Context, uri: Uri): String? {
+        if (uri.scheme == "content") {
+            val cursor = context.contentResolver.query(uri, null, null, null, null)
+            cursor.use {
+                if (cursor != null) {
+                    if(cursor.moveToFirst()) {
+                        return cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                    }
+                }
+            }
+        }
+
+        return uri.path?.lastIndexOf('/')?.let { uri.path?.substring(it) }
+    }
+    private suspend fun saveValues(name:String,negocio:String,checked:Boolean,checked2:Boolean){
+        requireContext().dataStore.edit { preferences ->
+            preferences[stringPreferencesKey("name")] = name
+            preferences[stringPreferencesKey("negocio")] = negocio
+            preferences[booleanPreferencesKey("vip")] = checked
+            preferences[booleanPreferencesKey("producto")] = checked2
+        }
+
+    }
+    private fun subirAFireBase() : Uri?{
+        Toast.makeText(activity, "Por favor, espere un mientras se carga la imagen", Toast.LENGTH_LONG).show()
+        buttonRegistrarseN.isClickable = false
+        buttonRegistrarseN.isEnabled = false
+        var downloadUri: Uri? = null
+        val storage = Firebase.storage("gs://fastfood-a4739.appspot.com")
+        val storageRef = storage.reference
+        val sd = getFileName(requireContext(), uriContent!!)
+        val file = Uri.fromFile(File(sd.toString()))
+        val mountainsRef = storageRef.child(file.lastPathSegment!!)
+        val mountainImagesRef = storageRef.child("images/${file.lastPathSegment}")
+        mountainsRef.name == mountainImagesRef.name // true
+        mountainsRef.path == mountainImagesRef.path // false
+        image.isDrawingCacheEnabled = true
+        image.buildDrawingCache()
+        val bitmap = (image.drawable as BitmapDrawable).bitmap
+        val baos = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        val data = baos.toByteArray()
+        val uploadTask = mountainsRef.putBytes(data)
+        uploadTask.continueWithTask { task ->
+            if (!task.isSuccessful) {
+                task.exception?.let {
+                    throw it
+                }
+            }
+            mountainsRef.downloadUrl
+        }.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                downloadUri = task.result
+                rutaImagen=downloadUri.toString()
+                //Toast.makeText(activity, ">>>>>>>>> $downloadUri", Toast.LENGTH_LONG).show()
+                buttonRegistrarseN.isClickable = true
+                buttonRegistrarseN.isEnabled = true
+            } else {
+                // Handle failures
+                // ...
+            }
+        }
+        return downloadUri
     }
     private fun eventChangeListenerNombre(){
         val db = Firebase.firestore
