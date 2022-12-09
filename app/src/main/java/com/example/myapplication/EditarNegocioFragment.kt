@@ -21,6 +21,8 @@ import com.canhub.cropper.options
 import com.example.myapplication.ui.negocio.Negocios
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.firestore.*
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
@@ -73,7 +75,27 @@ class EditarNegocioFragment : Fragment() {
 
         return root
     }
+    private fun eventChangeListenerNombre(){
+        val db = Firebase.firestore
+        db.clearPersistence()
 
+        db.collection("Business").addSnapshotListener(object : EventListener<QuerySnapshot>
+        {
+            override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
+                if (error != null){
+                    Log.e("Firestore error",error.message.toString())
+                    return
+                }
+                for (dc : DocumentChange in value?.documentChanges!!){
+                    if (dc.type == DocumentChange.Type.ADDED){
+                        negocioArrayList1.add(dc.document.toObject(Negocios::class.java).nombre_Negocio)
+                    }
+                }
+            }
+        }
+        )
+
+    }
     private fun eventChangeListener(id_negocio: String
                                     ,entradaNombreNegocio :  TextInputEditText
                                     ,entradaUbicacion :  TextInputEditText
@@ -119,6 +141,24 @@ class EditarNegocioFragment : Fragment() {
             }
         }
         )
+        eventChangeListenerNombre()
+    }
+    private fun comprobarNombre(nombre:String):Boolean{
+
+        var flag = false
+        if(nombre == miNombreNegocio){
+            return false
+        }
+        if(negocioArrayList1.isNotEmpty()){
+            for (negocio in negocioArrayList1){
+
+
+                if(negocio.trim().equals(nombre.trim(), ignoreCase = true)){
+                    return true
+
+                }
+            }}
+        return flag
     }
     private fun validarCampos(entradaNombreNegocio: TextInputEditText, entradaUbicacion: TextInputEditText,
                               entradaEmailNegocio: TextInputEditText, entradaDescripcionNegocio: TextInputEditText,entradatelefono: TextInputEditText):Boolean{
