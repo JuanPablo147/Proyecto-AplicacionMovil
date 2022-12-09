@@ -120,6 +120,56 @@ class EditarNegocioFragment : Fragment() {
         }
         )
     }
+    private fun validarCampos(entradaNombreNegocio: TextInputEditText, entradaUbicacion: TextInputEditText,
+                              entradaEmailNegocio: TextInputEditText, entradaDescripcionNegocio: TextInputEditText,entradatelefono: TextInputEditText):Boolean{
+
+        var flag = true
+
+        if(comprobarNombre(entradaNombreNegocio.editableText.toString() )){
+            entradaNombreNegocio.error = "Este nombre ya esta asociado a otro negocio"
+            return false
+        }
+        if (entradaNombreNegocio.editableText.toString().isEmpty()) {
+
+            entradaNombreNegocio.error = "llenar campo"
+            return false
+        }
+        if (entradaUbicacion.editableText.toString().isEmpty()) {
+
+            entradaUbicacion.error = "llenar campo"
+            return false
+        }
+
+        if (entradaDescripcionNegocio.editableText.toString().isEmpty()) {
+
+            entradaDescripcionNegocio.error = "Debe llenar campo"
+            return false
+        }
+        if (entradaNombreNegocio.editableText.toString().length > 30 || entradaNombreNegocio.editableText.toString().length < 2) {
+
+            entradaNombreNegocio.error = "Debe tener 3 a 30 caracteres"
+            return false
+        }
+        if (entradaUbicacion.editableText.toString().length > 30 || entradaUbicacion.editableText.toString().length < 2) {
+
+            entradaUbicacion.error = "Debe tener 3 a 30 caracteres"
+            return false
+        }
+
+        if (entradaDescripcionNegocio.editableText.toString().length > 50 || entradaDescripcionNegocio.editableText.toString().length < 2) {
+
+            entradaDescripcionNegocio.error = "Debe tener 3 a 50 caracteres"
+            return false
+        }
+        if (entradatelefono.editableText.toString().length != 8) {
+
+            entradatelefono.error = "Debe ingresar un numero de telefono valido de 8 digitos"
+            return false
+        }
+
+        return flag
+
+    }
     private fun getBusinessProfile()= requireContext().dataStoreBusiness.data.map { preferences->
         BusinessProfile(
             id_business = preferences[stringPreferencesKey("business_id")].orEmpty(),
