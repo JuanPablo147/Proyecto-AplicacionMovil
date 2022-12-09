@@ -6,9 +6,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RatingBar
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.ui.negocio.Negocios
 import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
@@ -27,7 +30,7 @@ class NegocioFragment : Fragment() {
 
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var negocioArrayList: ArrayList<Negocio>
+    private lateinit var negocioArrayList: ArrayList<Negocios>
     private lateinit var myadapter: ImageAdapter
     private lateinit var db: FirebaseFirestore
 
@@ -44,29 +47,51 @@ class NegocioFragment : Fragment() {
         recyclerView = root.findViewById(R.id.gridd_view_items)
         recyclerView.layoutManager = LinearLayoutManager(activity )
         recyclerView.setHasFixedSize(true)
-        val negocio1: Negocio = Negocio("Descripcion1", "email", "nombre1", "ruta", "ubicacion")
-        val negocio2: Negocio = Negocio("Descripcion2", "email", "nombre2", "ruta", "ubicacion")
-        val negocio3: Negocio = Negocio("Descripcion3", "email", "nombre3", "ruta", "ubicacion")
-        val negocio4: Negocio = Negocio("Descripcion4", "email", "nombre4", "ruta", "ubicacion")
         negocioArrayList = arrayListOf()
 
         myadapter = ImageAdapter(negocioArrayList,root.context)
         recyclerView.adapter = myadapter
-        EventChangeListener()
-        /*negocioArrayList.add(negocio1)
-        negocioArrayList.add(negocio2)
-        negocioArrayList.add(negocio3)
-        negocioArrayList.add(negocio4)*/
+        eventChangeListener()
 
+        myadapter.onItemClick = { contact ->
 
+            // do something with your item
+            Toast.makeText(activity, contact.nombre_Negocio, Toast.LENGTH_LONG).show()
+        }
 
 
         return root
     }
+    override fun onResume() {
+        super.onResume()
+        myadapter.onItemClick = { contact ->
+            val promedio: Float = if(contact.numero_N !=0){
+                (contact.suma_Promedio/contact.numero_N).toFloat()
+            }else{
+                (0).toFloat()
+            }
+            // do something with your item
+            //Toast.makeText(activity, contact.nombre_Negocio, Toast.LENGTH_LONG).show()
+            //db.collection("BusinessV2").document(contact.id).set(contact, SetOptions.merge())
+            NegocioDialog.newInstance(
+                contact.nombre_Negocio,
+                contact.email_Negocio,
+                contact.descripcion_Negocio,
+                contact.ubicacion,
+                contact.telefono.toString(),
+                promedio
 
-    private fun EventChangeListener(){
+            ).show(this.childFragmentManager, NegocioDialog.TAG)
+
+
+
+        }
+    }
+
+
+    private fun eventChangeListener(){
         db = FirebaseFirestore.getInstance()
-        db.collection("negocios").addSnapshotListener(object : EventListener<QuerySnapshot>
+        db.collection("Business").addSnapshotListener(object : EventListener<QuerySnapshot>
         {
             override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
                 if (error != null){
@@ -75,7 +100,11 @@ class NegocioFragment : Fragment() {
                 }
                 for (dc : DocumentChange in value?.documentChanges!!){
                     if (dc.type == DocumentChange.Type.ADDED){
-                    negocioArrayList.add(dc.document.toObject(Negocio::class.java))
+                        val miNegocio :Negocios =dc.document.toObject(Negocios::class.java)
+                        //miNegocio.id= dc.document.id
+                        //miNegocio.sumaPromedio =0.0
+                        //miNegocio.numeroN=0
+                        negocioArrayList.add(miNegocio)
 
                     }
                 }
@@ -86,29 +115,6 @@ class NegocioFragment : Fragment() {
 
     }
 
-    private fun cargarFirebase()  {
-
-        db = Firebase.firestore
-
-        val docRef = db.collection("negocios")
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                   // Log.d(TAG, "${document.id} => ${document.data}")
-                    val miProducto = document.toObject<Negocio>()
-
-                    negocioArrayList.add(miProducto)
-                    Log.d(ContentValues.TAG, "$miProducto =>")
-                }
-
-
-            }
-            .addOnFailureListener { exception ->
-                Log.d(ContentValues.TAG, "Error getting documents: ", exception)
-            }
-
-
-    }
 
 }
 
